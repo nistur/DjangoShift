@@ -33,19 +33,13 @@ Install the RHC client tools if you have not already done so:
     
     sudo gem install rhc
 
-Create a python-2.7 application
+Create a python-2.6 application
 
-    rhc app create -a django -t python-2.7
-    cd django
-
-Install Django to the gear
-    rhc ssh
-    source python-2.7/activate-virtenv
-    pip install Django==1.5
-    exit
+    rhc app create -a django -t python-2.6
 
 Add this upstream repo
 
+    cd django
     git remote add upstream -m master git://github.com/nistur/DjangoShift.git
     git pull -s recursive -X theirs upstream master
 
@@ -69,3 +63,16 @@ administering your Django app. This is the only time the password
 will be displayed, so be sure to save it somewhere. You might want 
 to pipe the output of the git push to a text file so you can grep for
 the password later.
+
+Notes
+-----
+
+In theory this will work on a Python-2.7 gear, however the static files
+aren't being hosted correctly at this point. Also for some reason,
+calling `python` in the Python-3.3 gear will run a python 2.6 executable
+So `.openshift/action_hooks/deploy` will pick up the wrong version of
+python. I'm not sure if there's a nice way to get the correct version of
+the gear, so for now, if you need 3.3, manually change `deploy` (you also
+need to modify the path to 
+$OPENSHIFT_HOMEDIR/$cartridge_type/virtenv/venv/bin/activate and change bits
+of settings.py)
