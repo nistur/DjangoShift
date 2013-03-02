@@ -33,14 +33,20 @@ Install the RHC client tools if you have not already done so:
     
     sudo gem install rhc
 
-Create a python-2.6 application
+Create a python-2.7 application
 
     rhc app create -a django -t python-2.7
+    cd django
+
+Install Django to the gear
+    rhc ssh
+    python-2.7/activate-virtenv
+    pip install Django==1.5
+    exit
 
 Add this upstream repo
 
-    cd django
-    git remote add upstream -m master git://github.com/openshift/django-example.git
+    git remote add upstream -m master git://github.com/nistur/DjangoShift.git
     git pull -s recursive -X theirs upstream master
 
 Then push the repo upstream
