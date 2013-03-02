@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='Django', 
+setup(name='YourAppName', 
       version='1.0',
       description='Django 1.5 example app',
       author='Philipp Geyer', 
