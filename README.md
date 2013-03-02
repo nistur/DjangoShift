@@ -40,7 +40,7 @@ Create a python-2.7 application
 
 Install Django to the gear
     rhc ssh
-    python-2.7/activate-virtenv
+    source python-2.7/activate-virtenv
     pip install Django==1.5
     exit
 
