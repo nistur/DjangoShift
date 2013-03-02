@@ -6,8 +6,6 @@
 
 cartridge_type="python-2.7"
 source $OPENSHIFT_HOMEDIR/$cartridge_type/virtenv/bin/activate
-#make sure we have Django installed
-pip install https://www.djangoproject.com/download/1.5/tarball/
 
 if [ ! -f $OPENSHIFT_DATA_DIR/sqlite3.db ]
 then
