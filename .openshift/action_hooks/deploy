@@ -5,8 +5,9 @@
 # ruby, etc.
 
 #todo: get python version
-cartridge_type="python-2.7"
+cartridge_type=`python -c "import sys; print(''.join(['python-','.'.join(map(str,sys.version_info[:2]))]))"`
 source $OPENSHIFT_HOMEDIR/$cartridge_type/virtenv/bin/activate
+pip install Django==1.5
 
 if [ ! -f $OPENSHIFT_DATA_DIR/sqlite3.db ]
 then
