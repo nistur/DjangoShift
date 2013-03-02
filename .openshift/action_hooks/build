@@ -3,6 +3,3 @@
 # available.  Otherwise it will execute while your application is stopped
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
-
-source ~/python-2.7/activate_virtenv
-pip install Django==1.5
