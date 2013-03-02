@@ -6,4 +6,5 @@
 
 cartridge_type="python-2.7"
 source $OPENSHIFT_HOMEDIR/$cartridge_type/activate_virtenv
-#make sure we have Django i
+#make sure we have Django installed
+pip install Django==1.5
