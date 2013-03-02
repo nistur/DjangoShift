@@ -5,4 +5,4 @@
 # could be python, php, ruby, etc.
 
 source ~/python-2.7/activate-virtenv
-pip install https://www.djangoproject.com/download/1.5c1/tarball/  
+pip install https://www.djangoproject.com/download/1.5/tarball/
