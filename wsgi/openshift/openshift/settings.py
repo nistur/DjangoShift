@@ -1,4 +1,4 @@
-# Django settings for storge project.
+# Django settings for openshift project.
 import imp, os
 
 # a setting to determine whether we are running on OpenShift
@@ -138,10 +138,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'storge.urls'
+ROOT_URLCONF = 'openshift.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'storge.wsgi.application'
+WSGI_APPLICATION = 'openshift.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
