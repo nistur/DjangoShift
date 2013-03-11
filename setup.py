@@ -9,5 +9,6 @@ setup(name='YourAppName',
 
       #  Uncomment one or more lines below in the install_requires section
       #  for the specific client drivers/modules your application needs.
-      install_requires=[ ],
+      install_requires=[ 'Django >= 1.5' ],
+      dependency_links = ['https://www.djangoproject.com/download/1.5/tarball/#egg=Django-1.5',]
      )
