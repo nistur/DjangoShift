@@ -5,9 +5,17 @@
 # ruby, etc.
 
 #todo: get python version
-cartridge_type=`python -c "import sys; print(''.join(['python-','.'.join(map(str,sys.version_info[:2]))]))"`
-source $OPENSHIFT_HOMEDIR/$cartridge_type/virtenv/bin/activate
+
+#  This is not correct -- will return python-2.6
+# cartridge_type=`python -c "import sys; print(''.join(['python-','.'.join(map(str,sys.version_info[:2]))]))"`
+cartridge_type="python-2.7"
+source $OPENSHIFT_HOMEDIR/$cartridge_type/activate_virtenv
 pip install Django==1.5
+
+#  Link to admin css+js files. There's probably a right 'Django' way of
+#  doing this w/ collectstatic. I ain't Django literate and I don't think
+#  I wanna be either - if serving static files is so cumbersome.
+ln -sf  "$OPENSHIFT_HOMEDIR/$cartridge_type/virtenv/lib/python2.7/site-packages/Django-1.5-py2.7.egg/django/contrib/admin" "$OPENSHIFT_REPO_DIR"wsgi/static/
 
 if [ ! -f $OPENSHIFT_DATA_DIR/sqlite3.db ]
 then
